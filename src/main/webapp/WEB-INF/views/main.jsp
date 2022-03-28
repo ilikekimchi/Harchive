@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
 	<p>추가</p>
 	<p>추가</p>
 	<p>추가</p>
-	<a>테</a>
+	<c:forEach var="list" items="${resultList}" >
+		<p>${list.bbsId}</p>
+		<p>${list.bbsSj}</p>
+	</c:forEach>
 </body>
 </html>
