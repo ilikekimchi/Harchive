@@ -7,16 +7,23 @@ import org.springframework.stereotype.Service;
 
 import com.archive.ksh.dao.BoardDao;
 import com.archive.ksh.model.Board;
+import com.archive.ksh.model.Item;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	BoardDao boardDao;
+	BoardDao dao;
 	
 	@Override
 	public List<Board> selectBoardList() {
-		return boardDao.selectBoardList();
+		return dao.selectBoardList();
+	}
+
+	@Override
+	public void add(Item item) {
+		dao.add(item);
+		
 	}
 
 }

@@ -1,13 +1,13 @@
 package com.archive.ksh.model;
 
 public class Board {
-	private String bbsId;
+	private int bbsId;
 	private String bbsSj;
 	
-	public String getBbsId() {
+	public int getBbsId() {
 		return bbsId;
 	}
-	public void setBbsId(String bbsId) {
+	public void setBbsId(int bbsId) {
 		this.bbsId = bbsId;
 	}
 	public String getBbsSj() {

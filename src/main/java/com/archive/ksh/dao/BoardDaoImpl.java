@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.archive.ksh.model.Board;
+import com.archive.ksh.model.Item;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {
@@ -18,6 +19,13 @@ public class BoardDaoImpl implements BoardDao {
 	public List<Board> selectBoardList() {
 		
 		return sql.selectList("board.list");
+	}
+
+	@Override
+	public void add(Item item) {
+		System.out.println(item.getTitle());
+		sql.insert("board.add", item);
+		
 	}
 
 }
