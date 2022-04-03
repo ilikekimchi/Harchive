@@ -9,18 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/about")
 public class AdmAboutController {
 	
-	final String path = "admin/about";
+	final String path = "admin/about/";
 	
-	@GetMapping("/")
-	String list() {
+	
+	@GetMapping("/")	// add page
+	String getAboutModify() {
 		
-		return path + "view";
+		return path + "modify";
 	}
 	
-	@PostMapping("/about")
-	String modify() {
+	@PostMapping("/modify")	// modify request
+	String aboutModify() {
 		
-		return "rediect:..";
+		return "redirect:..";
 	}
 	
 }

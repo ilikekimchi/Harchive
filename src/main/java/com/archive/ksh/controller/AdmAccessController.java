@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/access")
 public class AdmAccessController {
 
-	final String path = "admin/access";
+	final String path = "admin/access/";
 	
 	@GetMapping("/")
-	String list() {
+	String accessList() {
 		
 		return path + "list";
 	}

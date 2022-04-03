@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>H_아카이브 관리자 페이지</title>
+<title></title>
 </head>
 <body>
 	<a href="admin/access">접근 정보</a>

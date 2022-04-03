@@ -9,12 +9,12 @@ import com.archive.ksh.service.AdminService;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminController {
+public class AdminPageController {
 	
 	final String path = "admin/";
 	
 	@GetMapping("")
-	String main() {
+	String adminMain() {
 		
 		return path + "main";
 	}

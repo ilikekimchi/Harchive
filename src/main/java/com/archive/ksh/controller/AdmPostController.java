@@ -9,42 +9,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin/post")
 public class AdmPostController {
 
-	final String path = "admin/post";
+	final String path = "admin/post/";
 	
 	@GetMapping("/")
-	String list() {
+	String PostList() {
 		
 		return path + "list";
 	}
 	
-	@GetMapping("/add")	// 작성 페이지 
-	String add() {
+	@GetMapping("/add_page")
+	String getAddPage() {
 		
 		return path + "add";
 	}
 	
-	@PostMapping("/add") // 작성
-	String add() {
+	@PostMapping("/add")
+	String postAdd() {
 		
-		return "redirect:list";
+		return "";
 	}
 	
-	@GetMapping("/update") // 수정 페이지
-	String modify() {
+	@GetMapping("/update_page")
+	String getModifyPage() {
 		
 		return path + "modify";
 	}
 	
-	@PostMapping("")	//
-	String modify() {
+	@PostMapping("/modify")
+	String postModify() {
 		
-		return "redirect:list";
+		return path + "modify";
 	}
 	
 	@RequestMapping("/delete")
-	String delete() {
+	String postDelete() {
 		
-		return "redirect:..";
+		return "";
 	}
 	
 }

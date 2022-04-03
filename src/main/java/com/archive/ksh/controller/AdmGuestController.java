@@ -12,31 +12,24 @@ public class AdmGuestController {
 	final String path = "admin/guest";
 	
 	@GetMapping("/")
-	String list() {
+	String guestList() {
 		
 		return path + "list";
 	}
 	
-	@GetMapping("/delete")	// 댓글 추가
-	String add() { 
+	@PostMapping("/reply_add")
+	String replyAdd() { 
 		
 		return "redirect:..";
 	}
 	
-	@PostMapping("/delete")
-	String delete() {
+	@GetMapping("/reply_delete")
+	String replyDelete() {
 		
 		return "return:..";
 	}
 	
-	
-	@PostMapping("/add")	// 답글 추가
-	String commentAdd() {
-		
-		return "redirect:..";
-	}
-	
-	@GetMapping("/delete")	// 답글 삭제
+	@GetMapping("/comment_delete")
 	String commentDelete() {
 		
 		return "redirect:..";
