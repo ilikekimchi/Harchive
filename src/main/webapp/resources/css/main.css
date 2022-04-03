@@ -44,20 +44,19 @@ div {
 }
 
 .header-area {
-    max-width: 800px;
-    min-width: 400px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .header-menu {
-    margin: 35px 0px 0px 0px;
+    margin: 50px 0px 0px 0px;
     padding: 0px 5px;
     display: flex;
     justify-content:space-between;
 }
 
 .menu-list a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--black-color);
     border-radius: 16px;
@@ -79,7 +78,7 @@ div {
 /* content */
 
 .content-wrap {
-    max-width: 800px;
+    max-width: 900px;
     min-width: 400px;
     margin: 0 auto;
 }
@@ -99,7 +98,7 @@ div {
 .search-type { 
     border: none;  
     outline: none;
-    padding-right: 20px;
+    padding-right: 10px;
     font-size: 16px;
     text-align: center;
 }
@@ -125,33 +124,36 @@ div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /* 한 줄에 3개씩 1:1:1의 비율로 */
-    gap: 20px;
+    gap: 30px;
      /* 상하좌우 간격 20px */
 }
 
 .post-info {
     border: 1px solid var(--gray-color);
     border-radius: 4px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 20%);
 }
 
 .post-info:hover {
-    transform: scale(1.05);
-    transition: .4s;
+    /* 유튜브 영상 호버 효과 처럼 넣기 */
 }
 
 .post-date {
     font-size: 12px;
+    margin-bottom: 4px;
 }
 
 .post-title {
     font-size: 18px;
     margin-bottom: 5px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .post-tag {
     font-size: 12px;
+    margin-bottom: 0px;
 }
 
 .post-tag a {
@@ -188,3 +190,24 @@ div {
 }
 
 /* footer end*/
+
+#return-to-top {
+    display: none;
+    position: fixed;
+    bottom:30px;
+    right: 30px;
+    background-color: var(--1st-color);
+    color: var(--white-color);
+    box-shadow: 1px 2px 2px 0px rgb(0 0 0 / 20%);
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+    text-align: center;
+    line-height: 37px;
+    transition: .5s;
+}
+
+#return-to-top:hover {
+    background-color: var(--3st-color);
+}
