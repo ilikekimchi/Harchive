@@ -11,6 +11,10 @@
 
 	<typeAliases>
 		<typeAlias type="com.archive.ksh.model.Board" alias="BOARD"/>
+		<typeAlias type="com.archive.ksh.model.AccessInfo" alias="AccessInfo"/>
+		<typeAlias type="com.archive.ksh.model.Ask" alias="Ask"/>
+		<typeAlias type="com.archive.ksh.model.Post" alias="Post"/>
+		<typeAlias type="com.archive.ksh.model.Board" alias="BOARD"/>
 	</typeAliases>
 
 

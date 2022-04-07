@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.archive.ksh.model.Board;
@@ -19,26 +18,38 @@ public class RootController {
 	@Autowired
 	BoardService service;
 	
-//	@RequestMapping("/")
-//	String main(Model model) {
-//		List<Board> list = service.selectBoardList();
-//		
-//		model.addAttribute("resultList", list);
-//		
-//	 	return "user/main";
-//	}
-	
 	@RequestMapping("/")
 	String main() {
 		
-		return "user/main";
+		return "main";
 	}
 	
+
+	@RequestMapping("/admin")
+	String accessList() {
+		
+		return "admin";
+	}
+	
+	
+	/*
+	@RequestMapping("/")
+	String main(Model model) {
+		List<Board> list = service.selectBoardList();
+		
+		model.addAttribute("resultList", list);
+		
+	 	return "user/main";
+	}
+	*/
+	
+	/*
 	@PostMapping("/add")
 	String add(Item item) {
 		service.add(item);
 		
 		return "redirect:/";
 	}
+	*/
 	
 }
