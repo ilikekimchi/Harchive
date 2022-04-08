@@ -14,11 +14,15 @@
 		<typeAlias type="com.archive.ksh.model.AccessInfo" alias="AccessInfo"/>
 		<typeAlias type="com.archive.ksh.model.Ask" alias="Ask"/>
 		<typeAlias type="com.archive.ksh.model.Post" alias="Post"/>
-		<typeAlias type="com.archive.ksh.model.Board" alias="BOARD"/>
+		<typeAlias type="com.archive.ksh.model.About" alias="About"/>
 	</typeAliases>
 
 
 	<mappers>
 		<mapper resource="mapper/board.xml"/>
+		<mapper resource="mapper/about.xml"/>
+		<mapper resource="mapper/access.xml"/>
+		<mapper resource="mapper/ask.xml"/>
+		<mapper resource="mapper/post.xml"/>
 	</mappers>
 </configuration>
