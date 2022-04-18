@@ -7,9 +7,9 @@
 <title>에이치아카이브관리</title>
 </head>
 <body>
-	<a href="????/access">접근 정보</a>
-	<a href="/post">포스팅 관리</a>
-	<a href="/guest">방명록 관리</a>
-	<a href="/about">소개 관리</a>
+	<a href="access_list">방문자 정보</a>
+	<a href="admin/post">포스팅 관리</a>
+	<a href="ask_list">에스크 관리</a>
+	<a href="about_modify">소개 관리</a>
 </body>
 </html>

@@ -19,10 +19,8 @@
 	</form>
 	
 	<a href="admin">admin</a>
-	
-	<a href="guest">guest</a>
+	<a href="ask/ask">ask</a>
 	<a href="about">about</a>
-	
 	
 </body>
 </html>

@@ -1,50 +1,57 @@
 package com.archive.ksh.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.archive.ksh.model.Post;
+
 @Controller
-@RequestMapping("/admin/post")
-public class AdminPostController {
+@RequestMapping("/post")
+public class PostController {
 	
-	final String path = "post/admin/";
+	final String path = "post/";
 	
-	// list print + delete request, add page, add request, modify request
+	@GetMapping("/view") // user
+	String getPostView() {
+		
+		return "view";
+	}
 	
-	@GetMapping("/list")
+	@GetMapping("")
 	String postList() {
 		
 		return path + "list";
 	}
 	
 	@GetMapping("/add")
-	String addPageReq() {
+	String postAdd() {
 		
 		return path + "add";
 	}
 	
 	@PostMapping("/add")
-	String postAdd() {
+	String postAdd(Post post) {
 		
-		return ""; // 뒤로가기
+		return ""; // page reload (js:location.reload())
 	}
 	
 	@GetMapping("/modify")
-	String modifyPageReq() {
+	String postModify(Post post) {
 		
 		return path + "modify";
 	}
 	
 	@PostMapping("/modify") 
-	String postModify() {
+	String postModify(Model model) {
 			
 		return ""; // 뒤로가기
 	}
 	
 	@GetMapping("/delete")
-	String postDelete() {
+	String postDelete(Post post) {
 		
 		return "";	// 페이지 리로딩
 	}
