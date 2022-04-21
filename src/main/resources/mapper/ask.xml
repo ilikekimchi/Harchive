@@ -2,7 +2,25 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="ask">
+
+	<select id="list" resultType="Ask">
+		SELECT * FROM ask;
+	</select>
+
+	<insert id="questionAdd">
+		INSERT INTO ask (question)
+		VALUES (#{question}) 
+	</insert>
 	
+	<update id="answerAdd">
+		UPDATE ask
+		SET answer = #{answer}
+		WHERE askNum = #{askNum}
+	</update>
 	
+	<delete id="questionDelete">
+		DELETE FROM ask
+		WHERE askNum = #{askNum}	
+	</delete>
 	
 </mapper>

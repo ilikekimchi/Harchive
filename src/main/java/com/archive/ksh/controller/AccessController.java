@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/access")
 public class AccessController {
 	
-	@GetMapping("/access_list")
+	@GetMapping("/list")
 	String getAccessList() {
 		
-		return "admin/access_list";
+		return "access/list";
 	}
 	
 }

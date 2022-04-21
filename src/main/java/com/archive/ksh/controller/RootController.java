@@ -23,17 +23,18 @@ public class RootController {
 		List<Board> list = service.selectBoardList();
 
 		model.addAttribute("resultList", list);
-		return "user/main";
+		return "/main";
 	}
 
 	@RequestMapping("/admin")
 	String accessList() {
 
-		return "admin/admin";
+		return "/admin";
 	}
 
 	@PostMapping("/add")
 	String add(Item item) {
+		
 		service.add(item);
 
 		return "redirect:/";

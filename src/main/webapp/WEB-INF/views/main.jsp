@@ -19,7 +19,7 @@
 	</form>
 	
 	<a href="admin">admin</a>
-	<a href="ask/ask">ask</a>
+	<a href="ask">ask</a>
 	<a href="about">about</a>
 	
 </body>

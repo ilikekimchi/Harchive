@@ -1,6 +1,7 @@
 package com.archive.ksh.model;
 
 public class Item {
+	
 	private String title;
 
 	public String getTitle() {

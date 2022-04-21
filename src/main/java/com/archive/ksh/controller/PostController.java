@@ -20,8 +20,8 @@ public class PostController {
 		return "view";
 	}
 	
-	@GetMapping("")
-	String postList() {
+	@GetMapping("/list")
+	String postList() {	
 		
 		return path + "list";
 	}
