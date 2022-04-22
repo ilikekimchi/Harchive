@@ -16,13 +16,18 @@ public class AskDaoImpl implements AskDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Ask> askList() {
-		return sql.selectList("ask.list");
+	public List<Ask> userAskList() {
+		return sql.selectList("ask.listUser");
 	}
 	
 	@Override
 	public void questionAdd(Ask item) {
 		sql.insert("ask.questionAdd", item);
+	}
+	
+	@Override
+	public List<Ask> adminAskList() {
+		return sql.selectList("ask.listAdmin");
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-function submit() {
+/*function submit() {
     let question = document.querySelector('#question').value;
     
     const xhr = new XMLHttpRequest();
@@ -22,4 +22,4 @@ function submit() {
 
     };
 
-}
+}*/

@@ -7,9 +7,11 @@ import com.archive.ksh.model.Ask;
 
 public interface AskService {
 
+	List<Ask> userAskList();
+	
 	void questionAdd(Ask item);
-
-	List<Ask> askList();
+	
+	List<Ask> adminAskList();
 
 	void answerAdd(Ask item);
 

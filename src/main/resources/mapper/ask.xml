@@ -3,14 +3,19 @@
 
 <mapper	namespace="ask">
 
-	<select id="list" resultType="Ask">
-		SELECT * FROM ask;
+	<select id="listUser" resultType="Ask">
+		SELECT * FROM ask
+		WHERE answer IS NOT NULL;
 	</select>
 
 	<insert id="questionAdd">
 		INSERT INTO ask (question)
 		VALUES (#{question}) 
 	</insert>
+	
+	<select id="listAdmin" resultType="Ask">
+		SELECT * FROM ask;
+	</select>
 	
 	<update id="answerAdd">
 		UPDATE ask

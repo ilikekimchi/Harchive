@@ -47,9 +47,22 @@ body {
 </style>
 </head>
 <script type="text/javascript">
+
+window.onload = function () {
+    const add = document.querySelector('.add');
+    const del = document.querySelector('.del');
+
+    del.addEventListener('click', function () {
+        alert("ssex");
+        location.reload();
+    });
+
+    add.addEventListener('click', function () {
+        location.reload();
+    });
+}
 </script>
 <body>
-	
 	<div id="content-wrap">
         <ul class="question-list">
         	<c:forEach var="list" items="${askList}">
@@ -67,6 +80,5 @@ body {
             </c:forEach>
         </ul>
     </div>
-	
 </body>
 </html>

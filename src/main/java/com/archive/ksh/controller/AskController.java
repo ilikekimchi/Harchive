@@ -25,7 +25,7 @@ public class AskController {
 	
 	@GetMapping("")	
 	String askList(Model model) {	// user - list page 
-		List<Ask> list = service.askList();
+		List<Ask> list = service.userAskList();
 		model.addAttribute("askList", list);
 		return path + "ask";
 	}
@@ -38,7 +38,7 @@ public class AskController {
 		
 	@GetMapping("/list")
 	String adminAskList(Model model) {	//	admin - list page
-		List<Ask> list = service.askList();
+		List<Ask> list = service.adminAskList();
 		model.addAttribute("askList", list);
 		return "ask/list";
 	}

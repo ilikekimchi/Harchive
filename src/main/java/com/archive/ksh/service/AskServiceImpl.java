@@ -16,14 +16,18 @@ public class AskServiceImpl implements AskService {
 	AskDao dao;
 
 	@Override
+	public List<Ask> userAskList() {
+		return dao.userAskList();
+	}
+	
+	@Override
 	public void questionAdd(Ask item) {
-		dao.questionAdd(item);
-		
+		dao.questionAdd(item);		
 	}
 
 	@Override
-	public List<Ask> askList() {
-		return dao.askList();
+	public List<Ask> adminAskList() {
+		return dao.adminAskList();
 	}
 
 	@Override
