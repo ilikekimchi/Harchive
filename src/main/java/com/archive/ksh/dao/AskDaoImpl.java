@@ -26,20 +26,23 @@ public class AskDaoImpl implements AskDao {
 	}
 	
 	@Override
-	public List<Ask> adminAskList() {
-		return sql.selectList("ask.listAdmin");
+	public List<Ask> unansweredList() {
+		return sql.selectList("ask.unansweredList");
+	}
+	
+	@Override
+	public List<Ask> answerList() {
+		return sql.selectList("ask.answerList");
 	}
 
 	@Override
 	public void answerAdd(Ask item) {
-		
 		sql.update("ask.answerAdd", item);
 	}
 
 	@Override
 	public void questionDelete(int askNum) {
 		sql.delete("ask.questionDelete", askNum);
-		
 	}
 
 }

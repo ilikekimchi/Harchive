@@ -4,11 +4,11 @@ import java.sql.Date;
 
 public class Post {
 
-	private int num; // 기본키 
-	private String title; // 제목
-	private String content; // 내용
-	private int count; // 조회수
-	private Date add_date; // 작성일
+	private int num;
+	private String title; 
+	private String content; 
+	private int count;
+	private Date add_date; 
 	
 	public int getNum() {
 		return num;

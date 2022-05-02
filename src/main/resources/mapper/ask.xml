@@ -5,7 +5,7 @@
 
 	<select id="listUser" resultType="Ask">
 		SELECT * FROM ask
-		WHERE answer IS NOT NULL;
+		WHERE answer IS NOT NULL
 	</select>
 
 	<insert id="questionAdd">
@@ -13,8 +13,13 @@
 		VALUES (#{question}) 
 	</insert>
 	
-	<select id="listAdmin" resultType="Ask">
-		SELECT * FROM ask;
+	<select id="unansweredList" resultType="Ask">
+		SELECT askNum, question FROM ask
+		WHERE answer = null
+	</select>
+	
+	<select id="answerList" resultType="Ask">
+		SELECT * FROM ask
 	</select>
 	
 	<update id="answerAdd">
@@ -27,5 +32,10 @@
 		DELETE FROM ask
 		WHERE askNum = #{askNum}	
 	</delete>
+	
+	<select id="ansInfo" resultType="Ask">
+		SELECT * FROM ask
+		WHERE askNum = #{askNum}
+	</select>
 	
 </mapper>

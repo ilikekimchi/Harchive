@@ -10,10 +10,14 @@ public interface AskDao {
 
 	void questionAdd(Ask item);
 
-	List<Ask> adminAskList();
+	List<Ask> unansweredList();
+	
+	List<Ask> answerList();
 
 	void answerAdd(Ask item);
 
 	void questionDelete(int askNum);
+
+
 
 }

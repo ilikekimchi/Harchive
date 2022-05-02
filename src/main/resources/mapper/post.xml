@@ -3,6 +3,29 @@
 
 <mapper	namespace="post">
 	
+	<select id="list" resultType="Post">
+		SELECT * FROM post
+	</select>
 	
+	<select id="postInfo" resultType="Post">
+		SELECT * FROM post
+		WHERE postNum = #{postNum}
+	</select>
+	
+	<insert id="add">
+		INSERT INTO post (title, content)
+		VALUES (#{title}, #{content}) 
+	</insert>
+	
+	<update id="modify">
+		UPDATE post
+		SET content = #{content}
+		WHERE postNum = #{postNum}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM post
+		WHERE postNum = #{postNum}		
+	</delete>
 	
 </mapper>

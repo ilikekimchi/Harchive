@@ -6,6 +6,10 @@
 <title>POSTING</title>
 </head>
 <body>
-
+	<form method="post" action="/post/add">
+		<input type="text" name="title">
+		<textarea name="content"></textarea>
+		<button type="submit">upload!</button>
+	</form>
 </body>
 </html>

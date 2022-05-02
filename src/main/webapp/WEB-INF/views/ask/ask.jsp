@@ -6,48 +6,36 @@
 <meta charset="UTF-8">
 	<link  href="/css/ask.css" rel="stylesheet">
 	<script src="/js/ask.js" type="text/javascript"> </script>
+	<script src="https://kit.fontawesome.com/5ea47adb73.js" crossorigin="anonymous"></script>
 <title>사용자 페이지</title>
 </head>
 <body>
-    <div class="content-wrap">
+    <div id="content-wrap">
         <div>
             <form method="post" action="/ask/question">
-                <textarea name="question" id="question" cols="20" rows="1"></textarea>
-                <button type="submit">전송</button>
+                <textarea name="question" id="question" spellcheck="false" rows="1"></textarea>
+                <button type="submit" id="send">
+                	<i class="fa-solid fa-plus"></i>
+                </button>
             </form>
-            <!-- <button onclick="submit">전송</button> 비동기처리 -->
         </div>
 		
 
         <ul id="qna-list">
+        <c:forEach var="list" items="${askList}">
             <li class="qna">
                 <div class="q-wrap">
-                    <span class="q text-box">지금 어디 살고 있나요? 정확한 위치좀<span>
+                    <span class="q text-box">${list.question}</span>
                 </div>
 
                 <div class="a-wrap">
-                    <span class="a text-box">안녕하세요 분당구 정자동 삽니다.</span>
+                    <span class="a text-box">${list.answer}</span>
                 </div>
             </li>
-            
-            <li class="qna">
-                <div class="q-wrap">
-                    <span class="q text-box">키 몇임?<span>
-                </div>
-
-                <div class="a-wrap">
-                    <span class="a text-box">178 이다</span>
-                </div>
-            </li>
-
+            </c:forEach>
         </ul>
-
+	
     </div>
     
-    <c:forEach var="list" items="${askList}">
-    		<p>${list.askNum}</p>
-			<p>${list.question}</p>
-		</c:forEach>
-
 </body>
 </html>

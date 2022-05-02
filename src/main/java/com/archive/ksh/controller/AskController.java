@@ -36,29 +36,37 @@ public class AskController {
 		return "redirect:/ask"; 
 	}
 		
-	@GetMapping("/list")
-	String adminAskList(Model model) {	//	admin - list page
-		List<Ask> list = service.adminAskList();
+	@GetMapping("/list1")
+	String unansweredList(Model model) {	//	admin - list page 
+		List<Ask> list = service.unansweredList();
 		model.addAttribute("askList", list);
-		return "ask/list";
+		return path + "list1";
 	}
 	
-	@PostMapping("/list/answer")
+	@GetMapping("/list2")
+	String answerList(Model model) {	//	admin - list page 
+		List<Ask> list = service.answerList();
+		model.addAttribute("askList", list);
+		return path + "list2";
+	}
+	
+	@PostMapping("/list/ans_add")
 	String answer(Ask item) {	// admin - answer add
+	
 		service.answerAdd(item);
-		return ""; // page reload (js:location.reload())
+		return path + "list2"; // page reload (js:location.reload())
 	}
 	
 	@GetMapping("{askNum}/question_delete")	// change DeleteMapping
 	String questionDelete(@PathVariable int askNum) {	// admin - user question delete
 		service.questionDelete(askNum);
-		return "ask/list"; // page reload (js:location.reload())
+		return path + "list2"; // page reload (js:location.reload())
 	}
 	
 	@GetMapping("/answer_delte")	// change DeleteMapping
 	String answerDelete(Ask item) {	// admin - answer delete
 		
-		return ""; // page reload (js:location.reload())
+		return path + "list2"; // page reload (js:location.reload())
 	}
 	
 }

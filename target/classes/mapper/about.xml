@@ -3,5 +3,13 @@
 
 <mapper	namespace="about">
 	
+	<select id="info" resultType="About">
+		SELECT * FROM about;
+	</select>
+	
+	<update id="modify">
+		UPDATE about
+		SET content = #{content}
+	</update>
 	
 </mapper>

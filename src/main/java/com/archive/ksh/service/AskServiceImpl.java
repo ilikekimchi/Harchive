@@ -26,8 +26,13 @@ public class AskServiceImpl implements AskService {
 	}
 
 	@Override
-	public List<Ask> adminAskList() {
-		return dao.adminAskList();
+	public List<Ask> unansweredList() {
+		return dao.unansweredList();
+	}
+	
+	@Override
+	public List<Ask> answerList() {
+		return dao.answerList();
 	}
 
 	@Override
@@ -40,5 +45,6 @@ public class AskServiceImpl implements AskService {
 		dao.questionDelete(askNum);
 		
 	}
+
 
 }

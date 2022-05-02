@@ -8,5 +8,6 @@
 <body>
 	<a href="add">포스팅</a>
 	<a href="modify">수정</a>
+	
 </body>
 </html>

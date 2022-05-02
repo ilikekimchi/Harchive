@@ -1,5 +1,8 @@
 package com.archive.ksh.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,53 +10,60 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.archive.ksh.model.Post;
+import com.archive.ksh.service.PostService;
 
 @Controller
 @RequestMapping("/post")
 public class PostController {
 	
-	final String path = "post/";
+	@Autowired
+	PostService service;
 	
-	@GetMapping("/view") // user
-	String getPostView() {
+	final String path = "post/";
 		
-		return "view";
+	@GetMapping("/view") // user - post detail view
+	String getPostView(int postNum, Model model) {
+		Post item = service.getPostInfo(postNum);
+		model.addAttribute("postInfo", item);
+		return ""; // modal
 	}
 	
 	@GetMapping("/list")
-	String postList() {	
-		
+	String postList(Model model) {	// admin - list page
+		List<Post> list = service.postList();
+		model.addAttribute("postList", list);
 		return path + "list";
 	}
 	
 	@GetMapping("/add")
-	String postAdd() {
+	String postAdd() {	// admin - add page 
 		
 		return path + "add";
 	}
 	
 	@PostMapping("/add")
-	String postAdd(Post post) {
-		
+	String postAdd(Post item) {	// admin - post add
+		service.postAdd(item);
 		return ""; // page reload (js:location.reload())
 	}
 	
 	@GetMapping("/modify")
-	String postModify(Post post) {
-		
+	String postModify(int postNum, Model model) {	// admin - modify page 
+		Post item = service.getPostInfo(postNum);
+		model.addAttribute("postInfo", item);
 		return path + "modify";
 	}
 	
 	@PostMapping("/modify") 
-	String postModify(Model model) {
-			
-		return ""; // 뒤로가기
+	String postModify(Post item) {	// admin - modify request 
+		service.postModify(item);
+		return ""; 
 	}
 	
 	@GetMapping("/delete")
-	String postDelete(Post post) {
+	String postDelete(Post item) {	// admin - post delete request
 		
-		return "";	// 페이지 리로딩
+		return "";
 	}
 	
 	
