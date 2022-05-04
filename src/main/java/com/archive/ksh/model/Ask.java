@@ -2,16 +2,16 @@ package com.archive.ksh.model;
 
 public class Ask {
 	
-	private int askNum;
+	private int askid;
 	private String question;
 	private String answer;
 
-	public int getAskNum() {
-		return askNum;
+	public int getAskid() {
+		return askid;
 	}
 
-	public void setAskNum(int askNum) {
-		this.askNum = askNum;
+	public void setAskid(int askid) {
+		this.askid = askid;
 	}
 
 	public String getQuestion() {

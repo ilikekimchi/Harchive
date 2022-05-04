@@ -8,7 +8,7 @@ public interface PostService {
 
 	void postAdd(Post item);
 
-	Post getPostInfo(int postNum);
+	Post getPostInfo(int postid);
 
 	List<Post> postList();
 

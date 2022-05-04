@@ -4,12 +4,12 @@
 <mapper	namespace="post">
 	
 	<select id="list" resultType="Post">
-		SELECT * FROM post
+		SELECT post_id, title, count FROM post
 	</select>
 	
 	<select id="postInfo" resultType="Post">
 		SELECT * FROM post
-		WHERE postNum = #{postNum}
+		WHERE post_id = #{postid}
 	</select>
 	
 	<insert id="add">
@@ -20,12 +20,12 @@
 	<update id="modify">
 		UPDATE post
 		SET content = #{content}
-		WHERE postNum = #{postNum}
+		WHERE post_id = #{postid}
 	</update>
 	
 	<delete id="delete">
 		DELETE FROM post
-		WHERE postNum = #{postNum}		
+		WHERE post_id = #{postid}		
 	</delete>
 	
 </mapper>

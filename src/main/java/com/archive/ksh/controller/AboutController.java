@@ -21,7 +21,6 @@ public class AboutController {
 	
 	@GetMapping("")
 	String getPage(Model model) {
-		System.out.println("예아 여기는 겟 페이지. 이라샤이 마세");
 		About item = service.getInfo();
 		model.addAttribute("info", item);
 		return path + "about";
@@ -29,7 +28,6 @@ public class AboutController {
 	
 	@GetMapping("/modify")
 	String getAboutModify(Model model) {
-		System.out.println("예아 여기는 수정페이지 겟도다제.");
 		About item = service.getInfo();
 		model.addAttribute("info", item);		
 		return path + "modify";
@@ -37,7 +35,6 @@ public class AboutController {
 	
 	@PostMapping("/modify")
 	String postAboutModify(About item) {
-		System.out.println("예아 여기는 수정정보 포스트 리쿠에스트.");
 		service.modify(item);
 		return "redirect:."; // page reload or back
 	}

@@ -25,17 +25,17 @@
 	<update id="answerAdd">
 		UPDATE ask
 		SET answer = #{answer}
-		WHERE askNum = #{askNum}
+		WHERE ask_num = #{askNum}
 	</update>
 	
 	<delete id="questionDelete">
 		DELETE FROM ask
-		WHERE askNum = #{askNum}	
+		WHERE ask_num = #{askNum}	
 	</delete>
 	
 	<select id="ansInfo" resultType="Ask">
 		SELECT * FROM ask
-		WHERE askNum = #{askNum}
+		WHERE ask_num = #{askNum}
 	</select>
 	
 </mapper>

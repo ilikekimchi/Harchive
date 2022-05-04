@@ -5,69 +5,61 @@
 <head>
 <meta charset="UTF-8">
     <link  href="/css/main.css" rel="stylesheet">
+    <link  href="/css/reset.css" rel="stylesheet">
 	<script src="/js/main.js" type="text/javascript"> </script>
 	<script src="https://kit.fontawesome.com/5ea47adb73.js" crossorigin="anonymous"></script>
 <title>H_archive</title>
 </head>
 <body>
 
-    <div id="page-wrap">
+	<div id="page-wrap">
 
-        <header id="header-wrap">
-            <h1 id="page-title">H_archive</h1>
-            <ul class="header-menu">
-                <li class="menu-list"><a href="/" >메인</a></li>
-                <li class="menu-list"><a href="ask">질게</a></li>
-                <li class="menu-list"><a href="about">소개</a></li>
-            </ul>
-        </header>
+		<%@ include file="/WEB-INF/views/include/header.jsp" %>
+		
+		<div id="content-wrap">
 
-        <div id="content-wrap">
-
-            <div class="search-wrap">
-                <form method="post" id="search-form">
-                    <span class="search-type-wrap">
-                        <select name="" class="search-type">
-                            <option value="">제목+내용</option>
-                            <option value="">제목</option>
-                            <option value="">내용</option>
-                            <option value="">태그</option>
-                        </select>
-                    </span>
-                    <span class="search-keyword-wrap">
-                        <input type="text" class="search-keyword" placeholder="검색">
-                    </span>
-                </form>
-            </div>
-
-            <div class="post-area">
-                <ul class="post-list">
-                    <c:forEach var="list" items="${postList}">
-	                    <li class="post-info">
-	                        <div class="post-date">
-	                            <i class="fa-regular fa-calendar-plus"></i>
-	                            <span class="date-info">1997.09.04</span>
-	                        </div>
-	                        <div class="post-title">${list.title}</div>
-	                        <div class="post-tag">
-	                            <i class="fa-solid fa-tags"></i>
-	                            <a href="">일대기</a>
-	                        </div>
-	                    </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div>
-
-        <footer class="footer-wrap">
-            <span>Copyright ⓒ Kim Seong Hyun</span>
-        </footer>
-
-        <a id="return-to-top" href="#page-wrap">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-
-    </div>
+			<div class="search-wrap">
+				<form method="post" action="get">
+					<input type="search" id="search" placeholder="&#61442;" spellcheck="false" autocomplete="off">
+				</form>
+			</div>
 	
+			<div class="post-detail hidden">
+                <div class="modal-overlay" onclick="modalClose()"></div>
+                <div class="modal-content">
+                <span class="close-btn" onclick="modalClose()">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+                <span></span> <!-- post content -->
+                </div>
+            </div>
+			
+			<ul class="post-list">
+				<c:forEach var="list" items="${postList}">
+					<li class="post-info">
+						<div class="post-date">
+							<i class="fa-regular fa-calendar-plus"></i> <span
+								class="date-info">19.08.22</span>
+						</div>
+						<div class="post-title" onclick="postInfo(${list.postid})">${list.title}</div>
+						<div class="post-tag">
+							<i class="fa-solid fa-tags"></i>
+							<a href="">일대기</a>
+						</div>
+					</li>
+				</c:forEach>
+			</ul>
+
+		</div>
+
+		<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+
+	</div>
+	<script type="text/javascript">
+	function postInfo(postid) {
+		console.log(postid);
+
+	}
+	</script>
 </body>
 </html>

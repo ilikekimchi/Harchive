@@ -20,8 +20,8 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public Post getPostInfo(int postNum) {
-		return sql.selectOne("post.postInfo",postNum);
+	public Post getPostInfo(int postid) {
+		return sql.selectOne("post.postInfo", postid);
 	}
 
 	@Override

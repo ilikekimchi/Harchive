@@ -22,8 +22,8 @@ public class PostController {
 	final String path = "post/";
 		
 	@GetMapping("/view") // user - post detail view
-	String getPostView(int postNum, Model model) {
-		Post item = service.getPostInfo(postNum);
+	String getPostView(int postid, Model model) {
+		Post item = service.getPostInfo(postid);
 		model.addAttribute("postInfo", item);
 		return ""; // modal
 	}
@@ -48,8 +48,8 @@ public class PostController {
 	}
 	
 	@GetMapping("/modify")
-	String postModify(int postNum, Model model) {	// admin - modify page 
-		Post item = service.getPostInfo(postNum);
+	String postModify(int postid, Model model) {	// admin - modify page 
+		Post item = service.getPostInfo(postid);
 		model.addAttribute("postInfo", item);
 		return path + "modify";
 	}

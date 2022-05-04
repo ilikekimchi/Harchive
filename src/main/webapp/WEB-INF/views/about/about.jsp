@@ -4,9 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<link  href="/css/reset.css" rel="stylesheet">
 <title>소개</title>
 </head>
 <body>
-${info.content}
+
+	<div id="page-wrap">
+	
+		<%@ include file="/WEB-INF/views/include/header.jsp" %>
+		
+		<div id="content-wrap">
+		${info.content}
+		</div>
+		
+		<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+	</div>
+	
 </body>
 </html>

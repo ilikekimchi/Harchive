@@ -5,11 +5,15 @@
 <head>
 <meta charset="UTF-8">
 	<link  href="/css/ask.css" rel="stylesheet">
+	<link  href="/css/reset.css" rel="stylesheet">
 	<script src="/js/ask.js" type="text/javascript"> </script>
 	<script src="https://kit.fontawesome.com/5ea47adb73.js" crossorigin="anonymous"></script>
 <title>사용자 페이지</title>
 </head>
-<body>
+<body>	
+	<div id="page-wrap">
+	<%@ include file="/WEB-INF/views/include/header.jsp" %>
+		
     <div id="content-wrap">
         <div>
             <form method="post" action="/ask/question">
@@ -34,8 +38,10 @@
             </li>
             </c:forEach>
         </ul>
-	
     </div>
     
+    <%@ include file="/WEB-INF/views/include/footer.jsp" %>
+    
+    </div>
 </body>
 </html>

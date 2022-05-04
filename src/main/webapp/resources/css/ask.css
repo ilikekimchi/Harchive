@@ -1,21 +1,5 @@
 @charset "UTF-8";
 
-body {
-    margin: 0;
-    letter-spacing: -1px;
-}
-
-#content-wrap {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-#search-wrap {
-	background-color: #F5F7FB;
-    max-width: 550px;
-    margin: 0 auto;
-}
 
 form {
     display: flex;
@@ -31,6 +15,7 @@ form {
     padding: 10px 20px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    font-family: "Gowun Dodum";
     letter-spacing: -1px;
 }
 
@@ -45,7 +30,7 @@ form {
 
 #qna-list {
     padding-left: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .qna {
