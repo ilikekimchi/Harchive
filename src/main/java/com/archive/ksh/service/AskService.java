@@ -17,6 +17,8 @@ public interface AskService {
 
 	void answerAdd(Ask item);
 
-	void questionDelete(int askNum);
+	void questionDelete(int askid);
+
+	void answerDelete(int askid);
 
 }

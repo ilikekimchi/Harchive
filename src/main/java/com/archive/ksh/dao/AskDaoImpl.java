@@ -41,8 +41,14 @@ public class AskDaoImpl implements AskDao {
 	}
 
 	@Override
-	public void questionDelete(int askNum) {
-		sql.delete("ask.questionDelete", askNum);
+	public void questionDelete(int askid) {
+		sql.delete("ask.questionDelete", askid);
+	}
+
+	@Override
+	public void answerDelete(int askid) {
+		sql.delete("ask.answerDelete", askid);
+		
 	}
 
 }

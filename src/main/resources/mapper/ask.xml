@@ -14,28 +14,34 @@
 	</insert>
 	
 	<select id="unansweredList" resultType="Ask">
-		SELECT askNum, question FROM ask
-		WHERE answer = null
+		SELECT ask_id, question FROM ask
+		WHERE answer IS NULL
 	</select>
 	
 	<select id="answerList" resultType="Ask">
 		SELECT * FROM ask
+		WHERE answer IS NOT NULL
 	</select>
 	
 	<update id="answerAdd">
 		UPDATE ask
 		SET answer = #{answer}
-		WHERE ask_num = #{askNum}
+		WHERE ask_id = #{askid}
 	</update>
 	
 	<delete id="questionDelete">
 		DELETE FROM ask
-		WHERE ask_num = #{askNum}	
+		WHERE ask_id = #{askid}	
+	</delete>
+	
+	<delete id="answerDelete">
+		DELETE FROM ask
+		WHERE ask_id = #{askid}
 	</delete>
 	
 	<select id="ansInfo" resultType="Ask">
 		SELECT * FROM ask
-		WHERE ask_num = #{askNum}
+		WHERE ask_id = #{askid}
 	</select>
 	
 </mapper>

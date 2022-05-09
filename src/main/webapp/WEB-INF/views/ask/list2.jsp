@@ -29,9 +29,9 @@
                     <span>${list.answer}</span> <!-- answer -->
                 </div>
                 <div class="btn-wrap">
-                    <input type="hidden" name="askNum" value="${list.askNum}">
-                    <a href="${list.askNum}/answer_delete" class="btn">답변 삭제</a>
-                    <a href="${list.askNum}/question_delete" class="btn">질문 삭제</a>
+                    <input type="hidden" name="askid" value="${list.askid}">
+                    <a href="${list.askid}/answer_delete" class="btn">답변 삭제</a>
+                    <a href="${list.askid}/question_delete" class="btn">질문 삭제</a>
                 </div>
             </li>
             </c:forEach>

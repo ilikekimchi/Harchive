@@ -54,18 +54,18 @@ public class AskController {
 	String answer(Ask item) {	// admin - answer add
 	
 		service.answerAdd(item);
+		return path + "list1"; // page reload (js:location.reload())
+	}
+	
+	@GetMapping("{askid}/question_delete")	// change DeleteMapping
+	String questionDelete(@PathVariable int askid) {	// admin - user question delete
+		service.questionDelete(askid);
 		return path + "list2"; // page reload (js:location.reload())
 	}
 	
-	@GetMapping("{askNum}/question_delete")	// change DeleteMapping
-	String questionDelete(@PathVariable int askNum) {	// admin - user question delete
-		service.questionDelete(askNum);
-		return path + "list2"; // page reload (js:location.reload())
-	}
-	
-	@GetMapping("/answer_delte")	// change DeleteMapping
-	String answerDelete(Ask item) {	// admin - answer delete
-		
+	@GetMapping("{askid}/answer_delte")	// change DeleteMapping
+	String answerDelete(@PathVariable int askid) {	// admin - answer delete
+		service.answerDelete(askid);
 		return path + "list2"; // page reload (js:location.reload())
 	}
 	

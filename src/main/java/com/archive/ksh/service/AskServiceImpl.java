@@ -41,8 +41,14 @@ public class AskServiceImpl implements AskService {
 	}
 
 	@Override
-	public void questionDelete(int askNum) {
-		dao.questionDelete(askNum);
+	public void questionDelete(int askid) {
+		dao.questionDelete(askid);
+		
+	}
+
+	@Override
+	public void answerDelete(int askid) {
+		dao.answerDelete(askid);
 		
 	}
 

@@ -22,8 +22,8 @@
 					<form method="post" action="list/ans_add">
 						<div>
 							<div>
-								<input type="hidden" name="askNum" value="${list.askNum}">
-								<span>${list.askNum}. </span>
+								<input type="hidden" name="askid" value="${list.askid}">
+								<span>${list.askid}. </span>
 								<span>${list.question}</span>
 								<!-- <span class="date"> - 22.02.03 17:50</span> -->
 							</div>
@@ -32,7 +32,7 @@
 							</div>
 							<div>
 								<button type="submit" class="btn-style">전송</button>
-								<a href="${list.askNum}/question_delete" class="btn-style">삭제</a>
+								<a href="${list.askid}/question_delete" class="btn-style">삭제</a>
 							</div>
 						</div>
 					</form>
