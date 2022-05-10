@@ -1,10 +1,8 @@
 package com.archive.ksh.controller;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,11 +22,11 @@ public class PostController {
 	
 	final String path = "post/";
 		
-	@GetMapping("/view") // user - post detail view
+	@GetMapping("/view")
 	String getPostView(int postid, Model model) {
-		Post item = service.getPostInfo(postid);
+		Post item = service.postInfo(postid);
 		model.addAttribute("postInfo", item);
-		return ""; // modal
+		return "";
 	}
 	
 	@GetMapping("/list")
@@ -51,7 +49,7 @@ public class PostController {
 	
 	@GetMapping("/modify")
 	String postModify(int postid, Model model) {	// admin - modify page 
-		Post item = service.getPostInfo(postid);
+		Post item = service.postInfo(postid);
 		model.addAttribute("postInfo", item);
 		return path + "modify";
 	}

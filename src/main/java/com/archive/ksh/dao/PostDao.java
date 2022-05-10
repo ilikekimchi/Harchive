@@ -8,7 +8,7 @@ public interface PostDao {
 
 	void postAdd(Post item);
 
-	Post getPostInfo(int postid);
+	Post postInfo(int postid);
 
 	List<Post> postList();
 

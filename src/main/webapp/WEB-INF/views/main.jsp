@@ -30,7 +30,8 @@
                 <span class="close-btn" onclick="modalClose()">
                     <i class="fa-solid fa-xmark"></i>
                 </span>
-                <span></span> <!-- post content -->
+                <div>${postInfo.title} : 는 제목입니다. </div>
+                <span>${postInfo.content} : 는 내용입니다. </span>
                 </div>
             </div>
 			
@@ -41,7 +42,7 @@
 							<i class="fa-regular fa-calendar-plus"></i> <span
 								class="date-info">${list.date}</span>
 						</div>
-						<div class="post-title" onclick="postInfo(${list.postid})">${list.title}</div>
+						<div class="post-title" data-id="${list.postid}" onclick="postInfo()">${list.title}</div>
 						<div class="post-tag">
 							<i class="fa-solid fa-tags"></i>
 							<a href="">일대기</a>

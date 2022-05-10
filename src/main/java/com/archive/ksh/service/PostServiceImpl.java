@@ -20,8 +20,8 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public Post getPostInfo(int postid) {
-		return dao.getPostInfo(postid);
+	public Post postInfo(int postid) {
+		return dao.postInfo(postid);
 	}
 
 	@Override

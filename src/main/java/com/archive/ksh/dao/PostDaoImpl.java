@@ -20,7 +20,7 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public Post getPostInfo(int postid) {
+	public Post postInfo(int postid) {
 		return sql.selectOne("post.postInfo", postid);
 	}
 
