@@ -14,6 +14,8 @@ public interface PostDao {
 
 	void postModify(Post item);
 
+	void postDelte(int postid);
+
 	
 
 }

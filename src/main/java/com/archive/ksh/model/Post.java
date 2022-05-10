@@ -1,16 +1,21 @@
 package com.archive.ksh.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Post {
 
 	private int postid;
 	private String title;
 	private String content;
-	private int tag;
 	private int count;
-	private Date date;
-
+	
+//	@DateTimeFormat(pattern = "yy.MM.dd")
+//	private LocalDate date;
+	
+	private String date;
+		
 	public int getPostid() {
 		return postid;
 	}
@@ -22,13 +27,6 @@ public class Post {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public int getTag() {
-		return tag;
-	}
-	public void setTag(int tag) {
-		this.tag = tag;
 	}
 
 	public String getContent() {
@@ -44,11 +42,14 @@ public class Post {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
+
+	
+	
+
 }

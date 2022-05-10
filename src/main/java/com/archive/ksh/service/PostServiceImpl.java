@@ -34,6 +34,12 @@ public class PostServiceImpl implements PostService {
 		dao.postModify(item);		
 	}
 
+	@Override
+	public void postDelete(int postid) {
+		dao.postDelte(postid);
+		
+	}
+
 	
 
 	

@@ -39,11 +39,13 @@
 					<li class="post-info">
 						<div class="post-date">
 							<i class="fa-regular fa-calendar-plus"></i> <span
-								class="date-info">19.08.22</span>
+								class="date-info">${list.date}</span>
 						</div>
 						<div class="post-title" onclick="postInfo(${list.postid})">${list.title}</div>
 						<div class="post-tag">
 							<i class="fa-solid fa-tags"></i>
+							<a href="">일대기</a>
+							<a href="">일대기</a>
 							<a href="">일대기</a>
 						</div>
 					</li>
@@ -55,11 +57,6 @@
 		<%@ include file="/WEB-INF/views/include/footer.jsp" %>
 
 	</div>
-	<script type="text/javascript">
-	function postInfo(postid) {
-		console.log(postid);
 
-	}
-	</script>
 </body>
 </html>

@@ -4,7 +4,11 @@
 <mapper	namespace="post">
 	
 	<select id="list" resultType="Post">
-		SELECT post_id, title, count FROM post
+		SELECT title
+		, content
+		, post_id
+		, DATE_FORMAT(date, '%Y.%m.%d') AS date 
+		FROM post
 	</select>
 	
 	<select id="postInfo" resultType="Post">
@@ -13,8 +17,8 @@
 	</select>
 	
 	<insert id="add">
-		INSERT INTO post (title, content)
-		VALUES (#{title}, #{content}) 
+		INSERT INTO post (title, content, date)
+		VALUES (#{title}, #{content}, sysdate()) 
 	</insert>
 	
 	<update id="modify">

@@ -34,6 +34,12 @@ public class PostDaoImpl implements PostDao {
 		sql.update("post.modify", item);		
 	}
 
+	@Override
+	public void postDelte(int postid) {
+		sql.delete("post.delete", postid);
+		
+	}
+
 	
 
 }

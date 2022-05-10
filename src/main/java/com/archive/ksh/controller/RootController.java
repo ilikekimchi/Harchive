@@ -21,8 +21,8 @@ public class RootController {
 	@RequestMapping("/")
 	String main(Model model) {
 		List<Post> list = service.postList();
+		
 		model.addAttribute("postList", list);
-
 		return "/main";
 	}
 

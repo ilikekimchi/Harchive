@@ -1,11 +1,14 @@
 package com.archive.ksh.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -37,7 +40,6 @@ public class PostController {
 	
 	@GetMapping("/add")
 	String postAdd() {	// admin - add page 
-		
 		return path + "add";
 	}
 	
@@ -55,15 +57,16 @@ public class PostController {
 	}
 	
 	@PostMapping("/modify") 
-	String postModify(Post item) {	// admin - modify request 
+	String postModify(Post item) {	// admin - modify request
 		service.postModify(item);
 		return ""; 
 	}
 	
-	@GetMapping("/delete")
-	String postDelete(Post item) {	// admin - post delete request
+	@GetMapping("{postid}/delete")
+	String postDelete(@PathVariable int postid) {	// admin - post delete request
+		service.postDelete(postid);
 		
-		return "";
+		return path + "list";
 	}
 	
 	

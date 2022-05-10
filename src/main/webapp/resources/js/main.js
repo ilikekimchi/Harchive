@@ -1,4 +1,8 @@
 function postInfo(postid) {
-	console.log(postid);
+    document.querySelector('.post-detail').classList.remove('hidden');
+    
+}
 
+function modalClose() {
+    document.querySelector('.post-detail').classList.add('hidden');
 }
